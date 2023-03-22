@@ -1,0 +1,14 @@
+G = rgb2gray(imread('test.jpg'));
+N = imnoise(G, 'salt & pepper', 0.1);
+h1 = 1/9*ones(3,3);
+h2 = 1/25*ones(5,5);
+F1=conv2(G,h1,'same');
+F2=conv2(G,h2,'same');
+F3 = medfilt2(N,[3 3]);
+F4 = medfilt2(N,[5 5]);
+figure,subplot(2,3,1),imshow(G);title("Original Image");
+subplot(2,3,2),imshow(N);title("Salt & Pepper Noise Image");
+subplot(2,3,3),imshow(uint8(F1));title("Mean Filtered Image 3X3 mask");
+subplot(2,3,4),imshow(uint8(F2));title("Mean Filtered Image 5X5 mask");
+subplot(2,3,5),imshow(uint8(F3));title("Median Filtered Image 3X3 mask");
+subplot(2,3,6),imshow(uint8(F4));title("Median Filtered Image 5X5 mask");

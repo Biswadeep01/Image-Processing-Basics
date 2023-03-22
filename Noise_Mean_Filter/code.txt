@@ -1,0 +1,16 @@
+G = rgb2gray(imread('test.jpg'));
+N1 = imnoise(G, 'salt & pepper');
+N2 = imnoise(G, 'gaussian');
+h1 = 1/9*ones(3,3);
+h2 = 1/25*ones(5,5);
+F1 = conv2(N1,h1,'same');
+F2 = conv2(N1,h2,'same');
+Fi1 = conv2(N2,h1,'same');
+Fi2 = conv2(N2,h2,'same');
+figure,subplot(3,3,2),imshow(G);title("Original Image");
+subplot(3,3,4),imshow(uint8(N1));title("Salt & Pepper Original Image");
+subplot(3,3,5),imshow(uint8(F1));title("Salt & Pepper Using 3X3 mask");
+subplot(3,3,6),imshow(uint8(F2));title("Salt & Pepper Using 5X5 mask");
+subplot(3,3,7),imshow(uint8(N2));title("Gaussian Original Image");
+subplot(3,3,8),imshow(uint8(Fi1));title("Gaussian Using 3X3 mask");
+subplot(3,3,9),imshow(uint8(Fi2));title("Gaussian Using 5X5 mask");

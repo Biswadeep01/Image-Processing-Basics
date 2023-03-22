@@ -1,0 +1,10 @@
+G = rgb2gray(imread('test.jpg'));
+N = imnoise(G, 'speckle');
+h1 = 1/9*ones(3,3);
+h2 = 1/25*ones(5,5);
+F1 = conv2(N,h1,'same');
+F2 = conv2(N,h2,'same');
+figure,subplot(2,2,1),imshow(G);title("Original Image");
+subplot(2,2,2),imshow(N);title("Speckle Noise Image");
+subplot(2,2,3),imshow(uint8(F1));title("Filtered Image 3X3 mask");
+subplot(2,2,4),imshow(uint8(F2));title("Filtered Image 5X5 mask");

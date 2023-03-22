@@ -1,0 +1,8 @@
+I = rgb2gray(imread("test.jpg"));
+RI = flipdim(I, 1);
+MI = flipdim(I,2);
+RMI = flipdim(RI,2);
+subplot(2, 2, 1), subimage(I);title('Original Image');
+subplot(2, 2, 2), subimage(RI);title('Reverse Image');
+subplot(2, 2, 3), subimage(MI);title('Mirrored Image');
+subplot(2, 2, 4), subimage(RMI);title('Reverse Mirrored Image');

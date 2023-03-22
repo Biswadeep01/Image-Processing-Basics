@@ -1,0 +1,11 @@
+I= rgb2gray(imread("test.jpg"));
+b= [1 1 1; 1 1 1; 1 1 1];
+e= imerode(I, b);
+d= imdilate(I, b);
+o= imopen(I, b);
+c= imclose(I, b);
+figure,subplot(3,2,1),imshow(I);title("Original Image");
+subplot(3,2,3),imshow(e);title("Eroded Image");
+subplot(3,2,4),imshow(d);title("Dilated Image");
+subplot(3,2,5),imshow(o);title("Opened Image");
+subplot(3,2,6),imshow(c);title("Closed Image");

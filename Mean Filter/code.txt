@@ -1,0 +1,11 @@
+G = rgb2gray(imread('test.jpg'));
+h1=1/9*ones(3,3);
+h2=1/5*ones(5,5);
+b1=conv2(G,h1,'same');
+b2=conv2(G,h2,'same');
+figure,subplot(3,3,1),imshow(G);title("Original Image");
+subplot(3,3,2),imshow(uint8(b1));title("Output using 3X3 mask");
+subplot(3,3,3),imshow(uint8(b2));title("Output using 5X5 mask");
+subplot(3,3,4),imhist(G);title("Histogram of Original Image");
+subplot(3,3,5),imhist(uint8(b1));title("Histogram of 3X3 mask");
+subplot(3,3,6),imhist(uint8(b2));title("Histogram of 5X5 mask");

@@ -1,0 +1,6 @@
+>> G = rgb2gray(imread('test.jpg'));
+>> H = histeq(G);
+>> figure,subplot(2,2,1),imshow(G);title('Original Image');
+>> subplot(2,2,2),imhist(G);title('Histogram Original Image');
+>> subplot(2,2,3),imshow(H);title('Equalised Image');
+>> subplot(2,2,4),imhist(H);title('Histogram Equalised Image');

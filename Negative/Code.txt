@@ -1,0 +1,6 @@
+G = rgb2gray(imread('test.jpg'));
+N=255-G;
+subplot(2, 2, 1), imshow(G);title('Original Image');
+subplot(2, 2, 2), imshow(N);title('Negative Image');
+subplot(2, 2, 3), imhist(G);title('Original Image Histogram');
+subplot(2, 2, 4), imhist(N);title('Negative Image Histogram');

@@ -1,0 +1,10 @@
+I = rgb2gray(imread("test.jpg"));
+R30=imrotate(I,30,'bilinear');
+R45=imrotate(I,45,'bilinear');
+R60=imrotate(I,60,'bilinear');
+R180=imrotate(I,180,'bilinear');
+figure,subplot(2,3,1),imshow(I);title('Original Image');
+subplot(2,3,2),imshow(R30);title('Rotated 30-degree Image');
+subplot(2,3,3),imshow(R45);title('Rotated 45-degree Image');
+subplot(2,3,4),imshow(R60);title('Rotated 60-degree Image');
+subplot(2,3,5),imshow(R180);title('Rotated 180-degree Image');

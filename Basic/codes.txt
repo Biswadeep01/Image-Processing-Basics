@@ -1,0 +1,9 @@
+I = imread('test.jpg');
+G = rgb2gray(I);
+BW = im2bw(G);
+figure,subplot(2, 3, 1), imshow(I);title('Original Image');
+subplot(2, 3, 2), imshow(G);title('Grayscale Image');
+subplot(2, 3, 3), imshow(BW);title('Binary Image');
+subplot(2, 3, 4), imhist(I);title('Original Image Histogram');
+subplot(2, 3, 5), imhist(G);title('Grayscale Image Histogram');
+subplot(2, 3, 6), imhist(BW);title('Binary Image Histogram');

@@ -1,0 +1,12 @@
+I = rgb2gray(imread('test.jpg'));
+R = edge(I,'roberts');
+S = edge(I, 'sobel');
+P = edge(I, 'prewitt');
+L = edge(I, 'log');
+C = edge(I, 'canny');
+figure,subplot(3,2,1),imshow(I);title("Original Image");
+subplot(3,2,2),imshow(R);title("Roberts Edge-Detection");
+subplot(3,2,3),imshow(S);title("Sobel Edge-Detection");
+subplot(3,2,4),imshow(P);title("Prewitt Edge-Detection");
+subplot(3,2,5),imshow(L);title("Log Edge-Detection");
+subplot(3,2,6),imshow(C);title("Canny Edge-Detection");

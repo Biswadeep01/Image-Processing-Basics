@@ -1,0 +1,12 @@
+>> I = imread('test1.jpg');
+>> G = rgb2gray(imread("test2.jpg"));
+>> B = double(I)+50;
+>> BR = double(I)-40;
+>> C = G*.5;
+>> D = G*5;
+>> figure,subplot(2,3,1),imshow(I);title('Originial Image');
+>> subplot(2,3,2),imshow(uint8(B));title('Brightness Enhanced Image');
+>> subplot(2,3,3),imshow(uint8(BR));title('Brightness Supressed Image');
+>> subplot(2,3,4),imshow(G);title('Original Image');
+>> subplot(2,3,5),imshow(C);title('Increased Contrast Image');
+>> subplot(2,3,6),imshow(D);title('Decreased Contrast Image');
